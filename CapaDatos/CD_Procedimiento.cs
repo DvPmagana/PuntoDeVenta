@@ -24,7 +24,7 @@ namespace CapaDatos
         public DataTable CargarDatos(string Tabla)
         {
             Dt = new DataTable("Cargar Datos");
-            Cmd = new SqlCommand("Select * Form "+Tabla, Con.Abrir());
+            Cmd = new SqlCommand("Select * From "+ Tabla, Con.Abrir());
             Cmd.CommandType = CommandType.Text;
 
             Dr = Cmd.ExecuteReader();
@@ -44,8 +44,7 @@ namespace CapaDatos
             string Codigo = string.Empty;
             int Total = 0;
 
-            Cmd = new SqlCommand("Select (*) as TotalResgistros From " + Tabla, Con.Abrir());
-            Cmd = new SqlCommand("Select * Form " + Tabla, Con.Abrir());
+            Cmd = new SqlCommand("Select Count(*) as TotalRegistros From " + Tabla, Con.Abrir());
             Cmd.CommandType = CommandType.Text;
 
             Dr = Cmd.ExecuteReader();
@@ -57,27 +56,19 @@ namespace CapaDatos
 
             if (Total < 10)
             {
-                Codigo = "00000000" + Total;
+                Codigo = "00000" + Total;
             }
             else if (Total < 100)
             {
-                Codigo = "0000000" + Total;
+                Codigo = "0000" + Total;
             }
             else if (Total < 1000)
             {
-                Codigo = "00000" + Total;
+                Codigo = "000" + Total;
             }
             else if (Total < 10000)
             {
-                Codigo = "0000" + Total;
-            }
-            else if (Total < 1000000)
-            {
                 Codigo = "00" + Total;
-            }
-            else if (Total < 10000000)
-            {
-                Codigo = "0" + Total;
             }
             Con.Cerrar();
             return Codigo;
@@ -87,8 +78,7 @@ namespace CapaDatos
             string Codigo = string.Empty;
             int Total = 0;
 
-            Cmd = new SqlCommand("Select (*) as TotalResgistros From " + Tabla, Con.Abrir());
-            Cmd = new SqlCommand("Select * Form " + Tabla, Con.Abrir());
+            Cmd = new SqlCommand("Select Count(*) as TotalResgistros From " + Tabla, Con.Abrir());
             Cmd.CommandType = CommandType.Text;
 
             Dr = Cmd.ExecuteReader();

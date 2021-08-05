@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_Procedimiento.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CD_Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

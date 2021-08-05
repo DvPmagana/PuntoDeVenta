@@ -22,6 +22,7 @@ namespace PuntoDeVenta
         public Form1()
         {
             InitializeComponent();
+
             random = new Random(); 
             btnCloseChildForm.Visible = false;
             this.Text = string.Empty;
@@ -30,6 +31,7 @@ namespace PuntoDeVenta
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -37,7 +39,7 @@ namespace PuntoDeVenta
 
         //Metodos
         //Metodo para cambio de colores en Index
-        private Color SelectThemeColor()
+        public Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
             //Si se el color seleccionado ya esta utilizado, se vuelve a seleccionar otro color
@@ -58,14 +60,14 @@ namespace PuntoDeVenta
                 {
                     DisableButton();
                     Color color = SelectThemeColor();
+                    ThemeColor.PrimaryColor = color;
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor= Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor= ThemeColor.ChangeColorBrightness(color, -0.3);
+                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);        
                     btnCloseChildForm.Visible = true;
                 }   
             }
@@ -76,9 +78,9 @@ namespace PuntoDeVenta
             {
                 if (previuosBtn.GetType() == typeof(Button))
                 {
-                    previuosBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previuosBtn.ForeColor = Color.Gainsboro;
-                    previuosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                   previuosBtn.BackColor = Color.FromArgb(51, 51, 76);
+                   previuosBtn.ForeColor = Color.Gainsboro;
+                   previuosBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
 
@@ -107,6 +109,7 @@ namespace PuntoDeVenta
 
         private void btnProd_Click(object sender, EventArgs e)
         {
+            
             OpenChildForm(new Forms.FormsProduct(), sender);
 
         }
@@ -129,6 +132,7 @@ namespace PuntoDeVenta
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -180,6 +184,30 @@ namespace PuntoDeVenta
         private void button4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnInv_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormInventario(), sender);
+
+        }
+
+ 
+
+        private void lblHour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmTiempo_Tick(object sender, EventArgs e)
+        {
+            lblHour.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

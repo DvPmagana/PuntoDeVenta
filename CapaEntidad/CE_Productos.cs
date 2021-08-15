@@ -16,6 +16,7 @@ namespace CapaEntidad
         private decimal _Costo_Unitario;
         private decimal _Precio_Venta;
         private string _Tipo_Cargo;
+        private int _Cantidad;
         private string _Buscar;
 
         public int id_Productos { get => _id_Productos; set => _id_Productos = value; }
@@ -27,5 +28,6 @@ namespace CapaEntidad
         public decimal Precio_Venta { get => _Precio_Venta; set => _Precio_Venta = value; }
         public string Tipo_Cargo { get => _Tipo_Cargo; set => _Tipo_Cargo = value; }
         public string Buscar { get => _Buscar; set => _Buscar = value; }
+        public int Cantidad { get => _Cantidad; set => _Cantidad = value; }
     }
 }

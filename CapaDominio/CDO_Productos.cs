@@ -25,6 +25,10 @@ namespace CapaDominio
         {
             ObjProductos.EliminarProducto(Productos);
         }
+        public void EditarCantProductos(CE_Productos Productos)
+        {
+            ObjProductos.EditarCantProducto(Productos);
+        }
 
     }
 }

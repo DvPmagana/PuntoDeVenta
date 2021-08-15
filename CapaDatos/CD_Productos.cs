@@ -18,7 +18,7 @@ namespace CapaDatos
         //Metodo que agrega productos a BD
         public void AgregarProducto(CE_Productos Productos)
         {
-            Cmd = new SqlCommand("AgregarProductos", Con.Abrir());
+            Cmd = new SqlCommand("AgregarProducto", Con.Abrir());
             Cmd.CommandType = CommandType.StoredProcedure;
             Cmd.Parameters.Add(new SqlParameter("@Codigo", Productos.Codigo));
             Cmd.Parameters.Add(new SqlParameter("@Nombre", Productos.Nombre));
@@ -27,6 +27,7 @@ namespace CapaDatos
             Cmd.Parameters.Add(new SqlParameter("@Costo_Unitario", Productos.Costo_Unitario));
             Cmd.Parameters.Add(new SqlParameter("@Precio_Venta", Productos.Precio_Venta));
             Cmd.Parameters.Add(new SqlParameter("@Tipo_Cargo", Productos.Tipo_Cargo));
+            Cmd.Parameters.Add(new SqlParameter("@Cantidad", Productos.Cantidad));
             Cmd.ExecuteNonQuery();
 
             Con.Cerrar();
@@ -43,6 +44,16 @@ namespace CapaDatos
             Cmd.Parameters.Add(new SqlParameter("@Precio_Venta", Productos.Precio_Venta));
             Cmd.Parameters.Add(new SqlParameter("@Tipo_Cargo", Productos.Tipo_Cargo));
             Cmd.Parameters.Add(new SqlParameter("@id_Productos", Productos.id_Productos));
+            Cmd.ExecuteNonQuery();
+
+            Con.Cerrar();
+        }
+        public void EditarCantProducto(CE_Productos Productos)
+        {
+            Cmd = new SqlCommand("EditarCantProducto", Con.Abrir());
+            Cmd.CommandType = CommandType.StoredProcedure;
+            Cmd.Parameters.Add(new SqlParameter("@Cantidad", Productos.Cantidad));
+
             Cmd.ExecuteNonQuery();
 
             Con.Cerrar();

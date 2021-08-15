@@ -31,11 +31,8 @@ namespace PuntoDeVenta
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnVenta = new System.Windows.Forms.Button();
             this.btnInv = new System.Windows.Forms.Button();
-            this.btnServ = new System.Windows.Forms.Button();
-            this.btnConfig = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.btnProd = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,9 +43,9 @@ namespace PuntoDeVenta
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lbtTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
-            this.lblHour = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.tmTiempo = new System.Windows.Forms.Timer(this.components);
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblHour = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -58,20 +55,37 @@ namespace PuntoDeVenta
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnVenta);
             this.panelMenu.Controls.Add(this.btnInv);
-            this.panelMenu.Controls.Add(this.btnServ);
-            this.panelMenu.Controls.Add(this.btnConfig);
-            this.panelMenu.Controls.Add(this.btnReport);
-            this.panelMenu.Controls.Add(this.btnClientes);
             this.panelMenu.Controls.Add(this.btnProd);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 661);
+            this.panelMenu.Size = new System.Drawing.Size(180, 640);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // btnVenta
+            // 
+            this.btnVenta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVenta.FlatAppearance.BorderSize = 0;
+            this.btnVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVenta.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVenta.Image = global::PuntoDeVenta.Properties.Resources.outline_storefront_white_24dp;
+            this.btnVenta.Location = new System.Drawing.Point(0, 65);
+            this.btnVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVenta.Name = "btnVenta";
+            this.btnVenta.Size = new System.Drawing.Size(180, 200);
+            this.btnVenta.TabIndex = 7;
+            this.btnVenta.Text = "  Venta Articulos";
+            this.btnVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVenta.UseVisualStyleBackColor = true;
+            this.btnVenta.Click += new System.EventHandler(this.btnVenta_Click);
             // 
             // btnInv
             // 
@@ -79,100 +93,18 @@ namespace PuntoDeVenta
             this.btnInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInv.FlatAppearance.BorderSize = 0;
             this.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInv.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnInv.Image = global::PuntoDeVenta.Properties.Resources.outline_inventory_2_white_24dp;
-            this.btnInv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInv.Location = new System.Drawing.Point(0, 195);
+            this.btnInv.Location = new System.Drawing.Point(0, 465);
             this.btnInv.Margin = new System.Windows.Forms.Padding(2);
             this.btnInv.Name = "btnInv";
-            this.btnInv.Size = new System.Drawing.Size(180, 65);
+            this.btnInv.Size = new System.Drawing.Size(180, 200);
             this.btnInv.TabIndex = 6;
             this.btnInv.Text = "Inventario";
-            this.btnInv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnInv.UseVisualStyleBackColor = true;
             this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
-            // 
-            // btnServ
-            // 
-            this.btnServ.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnServ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnServ.FlatAppearance.BorderSize = 0;
-            this.btnServ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServ.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnServ.Image = global::PuntoDeVenta.Properties.Resources.outline_description_white_24dp1;
-            this.btnServ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnServ.Location = new System.Drawing.Point(0, 130);
-            this.btnServ.Margin = new System.Windows.Forms.Padding(2);
-            this.btnServ.Name = "btnServ";
-            this.btnServ.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnServ.Size = new System.Drawing.Size(180, 65);
-            this.btnServ.TabIndex = 5;
-            this.btnServ.Text = "Servicios";
-            this.btnServ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnServ.UseVisualStyleBackColor = true;
-            this.btnServ.Click += new System.EventHandler(this.btnServ_Click);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnConfig.Image = global::PuntoDeVenta.Properties.Resources.outline_settings_white_24dp;
-            this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 390);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(180, 65);
-            this.btnConfig.TabIndex = 3;
-            this.btnConfig.Text = "Configuracion";
-            this.btnConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
-            // btnReport
-            // 
-            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReport.Image = global::PuntoDeVenta.Properties.Resources.outline_assessment_white_24dp;
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 325);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(180, 65);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Reportes";
-            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClientes.Image = global::PuntoDeVenta.Properties.Resources.outline_account_box_white_24dp;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 260);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(180, 65);
-            this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnProd
             // 
@@ -180,17 +112,17 @@ namespace PuntoDeVenta
             this.btnProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnProd.FlatAppearance.BorderSize = 0;
             this.btnProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProd.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProd.Image = global::PuntoDeVenta.Properties.Resources.outline_shopping_cart_white_24dp1;
-            this.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProd.Location = new System.Drawing.Point(0, 65);
+            this.btnProd.Location = new System.Drawing.Point(-2, 261);
             this.btnProd.Margin = new System.Windows.Forms.Padding(2);
             this.btnProd.Name = "btnProd";
-            this.btnProd.Size = new System.Drawing.Size(180, 65);
+            this.btnProd.Size = new System.Drawing.Size(180, 200);
             this.btnProd.TabIndex = 1;
             this.btnProd.Text = "Productos";
-            this.btnProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProd.UseVisualStyleBackColor = true;
             this.btnProd.Click += new System.EventHandler(this.btnProd_Click);
             // 
@@ -313,12 +245,36 @@ namespace PuntoDeVenta
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.Location = new System.Drawing.Point(180, 65);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(1112, 596);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(1112, 575);
             this.panelDesktopPanel.TabIndex = 2;
             this.panelDesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
             // 
+            // tmTiempo
+            // 
+            this.tmTiempo.Enabled = true;
+            this.tmTiempo.Tick += new System.EventHandler(this.tmTiempo_Tick);
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDate.AutoSize = true;
+            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI Historic", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDate.Location = new System.Drawing.Point(145, 246);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(915, 89);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "Jueves, 8 de Agosto del 2021";
+            this.lblDate.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
+            // 
             // lblHour
             // 
+            this.lblHour.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHour.AutoSize = true;
             this.lblHour.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblHour.Font = new System.Drawing.Font("Sylfaen", 57F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,30 +285,12 @@ namespace PuntoDeVenta
             this.lblHour.Text = "3:05:35 a.m.";
             this.lblHour.Click += new System.EventHandler(this.lblHour_Click);
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI Historic", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblDate.Location = new System.Drawing.Point(170, 214);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(915, 89);
-            this.lblDate.TabIndex = 0;
-            this.lblDate.Text = "Jueves, 8 de Agosto del 2021";
-            this.lblDate.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
-            // 
-            // tmTiempo
-            // 
-            this.tmTiempo.Enabled = true;
-            this.tmTiempo.Tick += new System.EventHandler(this.tmTiempo_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1292, 661);
+            this.ClientSize = new System.Drawing.Size(1292, 640);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -377,10 +315,6 @@ namespace PuntoDeVenta
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnProd;
-        private System.Windows.Forms.Button btnServ;
-        private System.Windows.Forms.Button btnConfig;
-        private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lbtTitle;
         private System.Windows.Forms.Label label1;
@@ -390,9 +324,10 @@ namespace PuntoDeVenta
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnInv;
+        private System.Windows.Forms.Timer tmTiempo;
+        private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.Label lblHour;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Timer tmTiempo;
     }
 }
 

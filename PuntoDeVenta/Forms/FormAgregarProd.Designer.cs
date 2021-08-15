@@ -31,11 +31,9 @@ namespace PuntoDeVenta.Forms
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TxtCodProd = new System.Windows.Forms.TextBox();
-            this.TxtNombrProd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxDexcProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPresentacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCostoUnit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +43,10 @@ namespace PuntoDeVenta.Forms
             this.CbTipoCargo = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.CbPresentacion = new System.Windows.Forms.ComboBox();
+            this.CbNombres = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,28 +62,18 @@ namespace PuntoDeVenta.Forms
             // TxtCodProd
             // 
             this.TxtCodProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodProd.Location = new System.Drawing.Point(15, 39);
+            this.TxtCodProd.Location = new System.Drawing.Point(15, 41);
             this.TxtCodProd.Multiline = true;
             this.TxtCodProd.Name = "TxtCodProd";
             this.TxtCodProd.ReadOnly = true;
             this.TxtCodProd.Size = new System.Drawing.Size(149, 24);
             this.TxtCodProd.TabIndex = 1;
             // 
-            // TxtNombrProd
-            // 
-            this.TxtNombrProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombrProd.Location = new System.Drawing.Point(185, 39);
-            this.TxtNombrProd.Multiline = true;
-            this.TxtNombrProd.Name = "TxtNombrProd";
-            this.TxtNombrProd.Size = new System.Drawing.Size(344, 24);
-            this.TxtNombrProd.TabIndex = 3;
-            this.TxtNombrProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombrProd_KeyPress);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 13);
+            this.label2.Location = new System.Drawing.Point(194, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 20);
             this.label2.TabIndex = 2;
@@ -93,8 +85,8 @@ namespace PuntoDeVenta.Forms
             this.TxDexcProducto.Location = new System.Drawing.Point(15, 115);
             this.TxDexcProducto.Multiline = true;
             this.TxDexcProducto.Name = "TxDexcProducto";
-            this.TxDexcProducto.Size = new System.Drawing.Size(351, 24);
-            this.TxDexcProducto.TabIndex = 5;
+            this.TxDexcProducto.Size = new System.Drawing.Size(351, 28);
+            this.TxDexcProducto.TabIndex = 4;
             this.TxDexcProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxDexcProducto_KeyPress);
             // 
             // label3
@@ -106,16 +98,6 @@ namespace PuntoDeVenta.Forms
             this.label3.Size = new System.Drawing.Size(160, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Descripcion Producto";
-            // 
-            // txtPresentacion
-            // 
-            this.txtPresentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPresentacion.Location = new System.Drawing.Point(398, 115);
-            this.txtPresentacion.Multiline = true;
-            this.txtPresentacion.Name = "txtPresentacion";
-            this.txtPresentacion.Size = new System.Drawing.Size(138, 24);
-            this.txtPresentacion.TabIndex = 7;
-            this.txtPresentacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresentacion_KeyPress);
             // 
             // label4
             // 
@@ -133,8 +115,8 @@ namespace PuntoDeVenta.Forms
             this.txtCostoUnit.Location = new System.Drawing.Point(15, 197);
             this.txtCostoUnit.Multiline = true;
             this.txtCostoUnit.Name = "txtCostoUnit";
-            this.txtCostoUnit.Size = new System.Drawing.Size(138, 24);
-            this.txtCostoUnit.TabIndex = 9;
+            this.txtCostoUnit.Size = new System.Drawing.Size(138, 26);
+            this.txtCostoUnit.TabIndex = 6;
             this.txtCostoUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoUnit_KeyPress);
             this.txtCostoUnit.Leave += new System.EventHandler(this.txtCostoUnit_Leave);
             // 
@@ -154,8 +136,8 @@ namespace PuntoDeVenta.Forms
             this.txtPrecioVta.Location = new System.Drawing.Point(185, 197);
             this.txtPrecioVta.Multiline = true;
             this.txtPrecioVta.Name = "txtPrecioVta";
-            this.txtPrecioVta.Size = new System.Drawing.Size(170, 24);
-            this.txtPrecioVta.TabIndex = 11;
+            this.txtPrecioVta.Size = new System.Drawing.Size(170, 26);
+            this.txtPrecioVta.TabIndex = 7;
             this.txtPrecioVta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVta_KeyPress);
             this.txtPrecioVta.Leave += new System.EventHandler(this.txtPrecioVta_Leave);
             // 
@@ -184,11 +166,12 @@ namespace PuntoDeVenta.Forms
             this.CbTipoCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTipoCargo.FormattingEnabled = true;
             this.CbTipoCargo.Items.AddRange(new object[] {
-            "ITBIS 18%"});
+            "IVA 16%",
+            "IVA 5%"});
             this.CbTipoCargo.Location = new System.Drawing.Point(398, 195);
             this.CbTipoCargo.Name = "CbTipoCargo";
             this.CbTipoCargo.Size = new System.Drawing.Size(138, 28);
-            this.CbTipoCargo.TabIndex = 13;
+            this.CbTipoCargo.TabIndex = 8;
             this.CbTipoCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CbTipoCargo_KeyPress);
             // 
             // btnAgregar
@@ -211,11 +194,74 @@ namespace PuntoDeVenta.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // CbPresentacion
+            // 
+            this.CbPresentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbPresentacion.FormattingEnabled = true;
+            this.CbPresentacion.Items.AddRange(new object[] {
+            "Kgs",
+            "Lbs",
+            "Lts",
+            "Unidad",
+            "Grs",
+            "Mlts"});
+            this.CbPresentacion.Location = new System.Drawing.Point(398, 115);
+            this.CbPresentacion.Name = "CbPresentacion";
+            this.CbPresentacion.Size = new System.Drawing.Size(138, 28);
+            this.CbPresentacion.TabIndex = 5;
+            // 
+            // CbNombres
+            // 
+            this.CbNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbNombres.FormattingEnabled = true;
+            this.CbNombres.Items.AddRange(new object[] {
+            "Manzana",
+            "Peras",
+            "Sandias",
+            "Naranjas",
+            "Limones",
+            "Cacahuates Sabritas",
+            "Sabritas Rojas",
+            "Sabritas Verdes",
+            "Doritos Rojos",
+            "Rufles",
+            "Huevos",
+            "Salchicha",
+            "Jamon",
+            "Chorizo"});
+            this.CbNombres.Location = new System.Drawing.Point(191, 38);
+            this.CbNombres.Name = "CbNombres";
+            this.CbNombres.Size = new System.Drawing.Size(164, 28);
+            this.CbNombres.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(394, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Cantidad";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(397, 35);
+            this.txtCantidad.Multiline = true;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(130, 28);
+            this.txtCantidad.TabIndex = 3;
+            // 
             // FormAgregarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 343);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.CbNombres);
+            this.Controls.Add(this.CbPresentacion);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.CbTipoCargo);
@@ -224,11 +270,9 @@ namespace PuntoDeVenta.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCostoUnit);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPresentacion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TxDexcProducto);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtNombrProd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtCodProd);
             this.Controls.Add(this.label1);
@@ -244,11 +288,9 @@ namespace PuntoDeVenta.Forms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtCodProd;
-        private System.Windows.Forms.TextBox TxtNombrProd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxDexcProducto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPresentacion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecioVta;
@@ -258,5 +300,9 @@ namespace PuntoDeVenta.Forms
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtCostoUnit;
+        public System.Windows.Forms.ComboBox CbPresentacion;
+        public System.Windows.Forms.ComboBox CbNombres;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

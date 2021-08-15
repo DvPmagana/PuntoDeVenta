@@ -30,6 +30,10 @@ namespace PuntoDeVenta.Forms
         {
 
         }
+        public virtual void EditaCant()
+        {
+
+        }
         public virtual void Eliminar()
         {
 

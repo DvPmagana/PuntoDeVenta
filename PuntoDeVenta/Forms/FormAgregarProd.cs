@@ -14,6 +14,15 @@ namespace PuntoDeVenta.Forms
 {
     public partial class FormAgregarProd : FormBase
     {
+
+        public int f = 0;
+        public int cantidad = 1;
+        public Int32 i;
+        public String celda;
+        public DataGridViewCell dgc;
+        public Boolean repetido = false;
+        public Int32 indexcelda;
+
         public FormAgregarProd(FormsProduct Productos)
         {
             InitializeComponent();
@@ -54,15 +63,17 @@ namespace PuntoDeVenta.Forms
                 TxDexcProducto.Focus();
                 e.Handled = true;
             }
+
         }
 
         private void TxDexcProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                txtPresentacion.Focus();
+                CbPresentacion.Focus();
                 e.Handled = true;
             }
+
         }
 
         private void txtPresentacion_KeyPress(object sender, KeyPressEventArgs e)
@@ -80,6 +91,15 @@ namespace PuntoDeVenta.Forms
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 txtPrecioVta.Focus();
+                e.Handled = true;
+            }
+
+        }
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                TxDexcProducto.Focus();
                 e.Handled = true;
             }
 
@@ -121,31 +141,37 @@ namespace PuntoDeVenta.Forms
         {
             try
             {
-                if (TxtCodProd.Text == string.Empty || TxDexcProducto.Text == string.Empty || txtPresentacion.Text == string.Empty || txtCostoUnit.Text == string.Empty || txtPrecioVta.Text == string.Empty
+                if (TxtCodProd.Text == string.Empty || txtCantidad.Text == string.Empty || TxDexcProducto.Text == string.Empty || CbPresentacion.Text == string.Empty || txtCostoUnit.Text == string.Empty || txtPrecioVta.Text == string.Empty
                     || CbTipoCargo.Text == string.Empty)
                 {
                     MessageBox.Show("Debe completar todos los campos", "Agregar producto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
+                    int CantidadSum = 0;
+                    int CantidadCont = Convert.ToInt32(txtCantidad.Text.Trim());
+                    CantidadSum = CantidadSum + CantidadCont;
+
                     Producto.Codigo = TxtCodProd.Text.Trim();
-                    Producto.Nombre = TxtNombrProd.Text.Trim();
+                    Producto.Nombre = CbNombres.Text.Trim();
                     Producto.Descripcion = TxDexcProducto.Text.Trim();
-                    Producto.Presentacion = txtPresentacion.Text.Trim();
+                    Producto.Presentacion = CbPresentacion.Text.Trim();
                     Producto.Costo_Unitario = Convert.ToDecimal(txtCostoUnit.Text.Trim());
                     Producto.Precio_Venta = Convert.ToDecimal(txtPrecioVta.Text.Trim());
                     Producto.Tipo_Cargo = CbTipoCargo.Text.Trim();
+                    Producto.Cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
 
                     Productos.AgregarProducto(Producto);
                     MessageBox.Show("El producto se ha agregado correctamente", "Agregar producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Procedimientos.LimpiarControles(txtCostoUnit);
                     Procedimientos.LimpiarControles(txtPrecioVta);
                     GenerarCodigo();
-                    TxtNombrProd.Focus();
+                    CbNombres.Focus();
                     Agregar();
 
 
                 }
+
             }
             catch(Exception ex)
             {
@@ -153,6 +179,7 @@ namespace PuntoDeVenta.Forms
             }
            return false;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

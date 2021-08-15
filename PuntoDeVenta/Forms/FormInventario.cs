@@ -44,6 +44,7 @@ namespace PuntoDeVenta.Forms
             dataGridView1.Columns[6].DefaultCellStyle.Format = "#,##0.00";
 
             Procedimientos.AlternarColorFilaDataGridView(dataGridView1);
+            SumInventario();
         }
         private void CargarDatos()
         {
@@ -59,6 +60,25 @@ namespace PuntoDeVenta.Forms
             }
             TxtMontoTotalInv.Text = total.ToString("N2");
         }
+        public void SumInventario()
+{
+            double total = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                total += Convert.ToDouble(row.Cells["Costo_Unitario"].Value);
 
+            }
+            TxtMontoTotalInv.Text = "$" + string.Format("{0:N2}", total);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TxtMontoTotalInv_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

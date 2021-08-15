@@ -59,15 +59,9 @@ namespace PuntoDeVenta
                 if(currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
-                    ThemeColor.PrimaryColor = color;
                     currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
                     currentButton.ForeColor= Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    panelTitleBar.BackColor = color;
-                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);        
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));        
                     btnCloseChildForm.Visible = true;
                 }   
             }
@@ -109,8 +103,8 @@ namespace PuntoDeVenta
 
         private void btnProd_Click(object sender, EventArgs e)
         {
-            
             OpenChildForm(new Forms.FormsProduct(), sender);
+
 
         }
 
@@ -208,6 +202,11 @@ namespace PuntoDeVenta
         {
             lblHour.Text = DateTime.Now.ToLongTimeString();
             lblDate.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void btnVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

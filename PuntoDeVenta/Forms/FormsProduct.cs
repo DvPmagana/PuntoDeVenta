@@ -98,14 +98,14 @@ namespace PuntoDeVenta.Forms
             this.Close();
         }
 
-        public virtual bool Guardar() 
-        {
-            return false;
-        }
-        public virtual bool Editar()
-        {
-            return false;
-        }
+        //public virtual bool Guardar() 
+        //{
+        //    return false;
+        //}
+        //public virtual bool Editar()
+        //{
+        //    return false;
+        //}
 
         private void AgPro_UpdateEventHandler(object sender, FormAgregarProd.UpdateEventArgs args)
         {
